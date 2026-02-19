@@ -32,7 +32,7 @@ int execute_command(char *command, char **args) {
 
     
     waitpid(pid, &status, 0);
-    if(WEXITSTATUS(status)){
+    if(WIFEXITED(status)){
         return WEXITSTATUS(status);
     } else {
         return -1;
