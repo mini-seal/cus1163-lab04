@@ -1,0 +1,18 @@
+1. What happens to the child's memory when exec() is called? 
+
+      The child's process memory image is replaced with the new program when exec() is called. 
+
+2. Why do we need both fork() and exec()? Why not one system call? 
+
+      The two calls serve different purposes, so we cannot use just one system call. 
+      Fork() creates a new(child) process by copying the parent, and exec() replaces process images of the calling process with a new program. 
+
+3. What happens if you call exec() in the parent process instead of the child? 
+
+	    If you call exec() in the parent process instead of the child, the process image replacement would occur in the parent. 
+      The original program would no longer exist after the new program finishes executing, because the parent is the original.  
+
+4. Why must the child call exit() instead of return after a failed exec()? 
+
+      The child must call exit() instead of return after a failed exec() because return only exits the current function, allowing the child to continue executing code in its program. 
+      Calling exit() ensures immediate termination of the current process, preventing incorrect execution from the failed exec(). 
