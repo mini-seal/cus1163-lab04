@@ -5,7 +5,7 @@
 2. Why do we need both fork() and exec()? Why not one system call? 
 
       The two calls serve different purposes, so we cannot use just one system call. 
-      Fork() creates a new(child) process by copying the parent, and exec() replaces process images of the calling process with a new program. 
+      Fork() creates a new child process by copying the parent, and exec() replaces process images of the calling process with a new program. 
 
 3. What happens if you call exec() in the parent process instead of the child? 
 
